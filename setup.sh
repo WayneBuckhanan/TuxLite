@@ -368,14 +368,14 @@ function optimize_stack {
 
     # Tweak my.cnf. Commented out. Best to let users configure my.cnf on their own
     #cp /etc/mysql/{my.cnf,my.cnf.bak}
-    #if [ -e /usr/share/doc/mysql-server-5.1/examples/my-medium.cnf.gz ]; then
-    #gunzip /usr/share/doc/mysql-server-5.1/examples/my-medium.cnf.gz
-    #cp /usr/share/doc/mysql-server-5.1/examples/my-medium.cnf /etc/mysql/my.cnf
-    #else
-    #gunzip /usr/share/doc/mysql-server-5.0/examples/my-medium.cnf.gz
-    #cp /usr/share/doc/mysql-server-5.0/examples/my-medium.cnf /etc/mysql/my.cnf
+    #if [ -e /usr/share/doc/mysql-server-5.5/examples/my-small.cnf ]; then
+    #cp /usr/share/doc/mysql-server-5.5/examples/my-small.cnf /etc/mysql/my.cnf
+    #elsif [ -e /usr/share/doc/mysql-server-5.5/examples/my-small.cnf.gz ]; then
+    #gunzip /usr/share/doc/mysql-server-5.5/examples/my-small.cnf.gz
+    #cp /usr/share/doc/mysql-server-5.5/examples/my-small.cnf /etc/mysql/my.cnf
     #fi
-    #sed -i '/myisam_sort_buffer_size/ a\skip-innodb' /etc/mysql/my.cnf
+    #sed -i '/\[mysqld\]/ a\skip-innodb' /etc/mysql/my.cnf
+    #sed -i '/\[mysqld\]/ a\default-storage-engine = myisam' /etc/mysql/my.cnf
     #sleep 1
     #service mysql restart
 
