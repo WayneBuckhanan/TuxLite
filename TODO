@@ -1,0 +1,9 @@
+20130714 low memory install
+	 # install apache
+	 # service apache2 stop
+	 # install mysql
+	 # service mysql stop
+	 # tweak configs
+	 # service apache2 restart
+	 # service mysql restart
+
